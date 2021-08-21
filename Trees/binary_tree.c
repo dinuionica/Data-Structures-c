@@ -51,9 +51,7 @@ b_tree_insert(b_tree_t* b_tree, void* data)
     /* create queue and add the root */
     q = q_create(sizeof(void**), MAX_NODES);
     q_enqueue(q, &b_tree->root);
-    /* cat timp coada nu este goala*/
     while (!q_is_empty(q)) {
-        /* extrag elementul din front */
         b_node_tmp = *(b_node_t **)q_front(q);
         q_dequeue(q);
 
